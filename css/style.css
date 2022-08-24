@@ -1,6 +1,8 @@
-*{
-    margin: 0;
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@200;300;400;500;600;700&display=swap');
+
+* {
     padding: 0;
+    margin: 0;
 }
 
 :root {
@@ -12,103 +14,170 @@
     --white: #FFFFFF;
     --text-gray: #cecece;
 }
+body {
+    background-color: var(--bg-dark);
+    font-family: "Montserrat", sans-serif;
+    color: var(--white);
+    overflow-x: hidden;
+}
 
-body{
-    background-color:#000000
+.container {
+    max-width: 80rem;
+    margin: 0 auto;
 }
-.navbar{
+.navbar {
     display: flex;
-    align-content: space-between;
+    justify-content: space-between;
+    height: 15vh;
     align-items: center;
-
+    overflow-x: auto;
 }
-.logo{
-    margin: 30px;
+.navbar .logo-container img {
+    width: 100px;
 }
-.list{
-    display: flex;
-    align-content: flex-end;
-    margin-left: 40rem;
-    color: #ffffff;
-    align-items: center;
-    gap: 70px;
-}
-.list-item{
-    text-transform: uppercase;
+.navbar .list {
     list-style-type: none;
-    font-size: 13px;
-    font-weight: 800;
-    cursor: pointer;
-}
-
-.home{
     display: flex;
-    margin-right: 10rem;
-    align-items: center;
-    align-content: space-between;
-}
-.home .right img{
-    width: 640px;
-margin-left: 109px;
-}
-.left{
-    margin-right: 20px;
-}
-.left h2{
-    color: #d0101c;
-    margin-bottom: 20px;
-}
-.left h1{
-    font-size: 5rem;
-    margin-bottom: 30px;
-    color: #ffffff;
-}
-.left p{
-    color: #ffffff;
-    line-height: 30px;
-    font-size: 1.2em;
-}
-.left button{
-    padding: 16px 40px;
-    margin-top: 30px;
-    background-color: #d0101c;
-    color: #ffffff;
-    font-size: 20px;
+    gap: 70px;
+    margin-top: -20px;
     text-transform: uppercase;
+    font-size: 13px;
+    font-weight: 500;
+}
+@media only screen and (max-width: 1045px) {
+    .navbar .list {
+        gap: 40px;
+        margin-top: 5px;
+    }
+    .navbar .logo-container {
+        margin-right: 50px;
+    }
+    .navbar .list li:last-child {
+        width: 100px;
+    }
 }
 
-/* .................second section.......... */
-.second-screen{
-    margin-top: 100px;
-}
-.card-section{
+
+/*---------------------- hero section --------------------*/
+.hero {
     display: flex;
     justify-content: center;
-    gap: 25px;
+    position: relative;
+}
+.hero .left-image {
+    margin-top: -80px;
+    margin-left: -140px;
+} 
+.hero .left-image img {
+    width: 640px;
+}
+.hero .right-headline {
+    margin-top: 120px;
+}
+.hero .right-headline h4 {
+    color: var(--primary-light);
+    font-size: 1.4rem;
+}
+.hero .right-headline h1 {
+    font-size: 4rem;
+    margin-bottom: 10px;
+}
+.hero .right-headline p {
+    font-size: 1.2rem;
+    line-height: 22px;
+}
+.hero .right-headline button {
+    background-color: var(--primary);
+    border: none;
+    color: var(--white);
+    font-size: 18px;
+    text-transform: uppercase;
+    padding: 18px 40px;
+    margin-top: 40px;
+}
+.hero .box {
+    position: absolute;
+    background-color: var(--bg-dark-light);
+    width: 53rem;
+    height: 960px;
+    left: -200px;
+    top: 560px;
+    z-index: -1;
 }
 
-.card{
-    background-color: #1e1e1e;
+@media only screen and (max-width: 1045px) {
+    .hero .left-image {
+        margin-top: 0px;
+    } 
+    .hero .left-image img {
+        width: 500px;
+    }
+    .hero .right-headline h4 {
+        font-size: 1.1rem;
+    }
+    .hero .right-headline h1 {
+        font-size: 2.4rem;
+    }
+    .hero .right-headline p {
+        font-size: 1rem;
+    }
+    .hero .right-headline button {
+        padding: 14px 30px;
+    }
+    .hero .box {
+        position: absolute;
+        background-color: var(--bg-dark-light);
+        width: 43rem;
+        height: 960px;
+        left: -200px;
+        top: 500px;
+        z-index: -1;
+    }
+    
+}
+@media only screen and (max-width: 808px) {
+    .hero {
+        flex-direction: column;
+        padding: 0 20px;
+    }
+    .hero .right-headline {
+        margin-top: 50px;
+    }
+    
+}
+/*----------------------- service section ----------------------*/
+.serveice-section {
+    margin-top: 100px;
+}
+.serveice-section .service-cards {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+.serveice-section .service-cards .service-card {
+    background-color: var(--bg-dark-light-2);
     padding: 40px 50px;
 }
-.card:nth-child(2){
-    background-color: #c91b28;
+.serveice-section .service-cards .service-card:nth-child(2) {
+    background-color: var(--primary);
 }
-.card h1{
+.serveice-section .service-cards .service-card h1 {
     font-weight: 600;
     margin: 20px 0;
-    color: #ffffff;
 }
-.card p{
+.serveice-section .service-cards .service-card p {
     font-size: 1.4rem;
-    color: #ffffff;
+    color: var(--text-gray);
 }
-.card i{
-    color: #f83241;
+.serveice-section .service-cards .service-card .service-btn i {
+    color: var(--primary-light);
     margin-left: 10px;
 }
-.card .service-btn button{
-    color:#f83241;
+.serveice-section .service-cards .service-card:nth-child(2) .service-btn i {
+    color: var(--white);
+}
+.serveice-section .service-cards .service-card .service-btn button {
+    color: var(--primary-light);
     background-color: transparent;
     border: none;
     cursor: pointer;
@@ -117,90 +186,103 @@ margin-left: 109px;
     text-transform: uppercase;
     font-weight: 400;
 }
-.card:nth-child(2) button{
-    color:#ffffff;
-}
-.card:nth-child(2) i{
-    color:#ffffff;
+.serveice-section .service-cards .service-card:nth-child(2) button {
+    color: var(--white);
 }
 
-/* ............. */
-.experience{
+.service-stats {
     display: flex;
-    align-content: center;
     justify-content: center;
     align-items: center;
     margin-top: 100px;
 }
-.leftsection{
-    flex: 1;
+.service-stats .left {
+    flex: 1.2;
     text-align: center;
 }
-.leftsection h1{
+.service-stats .left h1 {
     color: var(--primary-light);
     font-size: 7rem;
     font-weight: 900;
 }
-.leftsection p{
-    color: var(--white);
-    font-size: 2.5rem;
-    font-weight: 900;
+.service-stats .left p {
+    font-size: 2rem;
+    margin-top: -10px;
+    font-weight: 600;
 }
-.experience .rightsection {
+.service-stats .right {
     display: flex;
     gap: 20px;
     flex: 2;
     flex-wrap: wrap;
 }
-.experience .cardsection{
-    width: 25rem;
+.service-stats .right .card {
+    background-color: var(--bg-dark-light-2);
+    width: 20rem;
     height: 120px;
     display: flex;
-    background-color: #1e1e1e;
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    
 }
-.experience .rightsection .cardsection h1{
-    color:var(--primary-light);
-    font-size: 2.8rem;
+.service-stats .right .card h1 {
+    color: var(--primary-light);
+    font-size: 2.9rem;
 }
-.experience .rightsection .cardsection p{
-    color:var(--white);
-    font-size: 1.5rem;
+.service-stats .right .card p {
+    color: var(--text-gray);
+    font-size: 17px;
+    padding-top: 5px;
 }
-/* .........featured card......... */
-.featured .project{
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-    margin-top: 10rem;
-    align-content: space-between;
-    margin-bottom: 10rem;
-}
-.featured .project h1{
-    margin-left: 20rem;
-    color: #ffffff;
-    text-transform: uppercase;
-    font-size: 2.2rem;
-}.featured .project p{
-    font-size: 1.2rem;
-    margin-left: 20rem;
-    color: #aba4a4;
-
-}
-.featured .project .btnnn button{
-    margin-right: 20rem;
-    text-transform: uppercase;
-    background-color: #c91b28;
-    border: #c91b28;
-    color: #ffffff;
-    font-size: 1.2rem;
-    padding: 10px 40px;
+@media only screen and (max-width: 1045px) {
+    .serveice-section .service-cards .service-card h1 {
+        font-size: 1.5rem;
+    }
+    .serveice-section .service-cards .service-card p {
+        font-size: 1.1rem;
+    }
+    .serveice-section .service-cards .service-card .logo img {
+        width: 40px;
+    }
+    .serveice-section .service-cards {
+        flex-wrap: wrap;
+    }
 }
 
-
+@media only screen and (max-width: 808px) {
+    .service-stats {
+        margin: 90px auto;
+        flex-direction: column;
+    }
+    .service-stats .left h1 {
+        font-size: 4rem;
+    }
+    .service-stats .left p {
+        font-size: 1.5rem;
+    }
+    .service-stats .right {
+        justify-content: center;
+        margin-top: 40px;
+    }
+    .service-stats .right .card {
+        background-color: var(--bg-dark-light-2);
+        width: 10rem;
+        height: 120px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+    .service-stats .right .card h1 {
+        color: var(--primary-light);
+        font-size: 2.9rem;
+    }
+    .service-stats .right .card p {
+        color: var(--text-gray);
+        font-size: 17px;
+        padding-top: 5px;
+    }
+}
 
 
 /*----------------------- project section ---------------------*/
